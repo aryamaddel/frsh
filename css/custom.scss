@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+html,
+body {
+  height: 100%;
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+}
+
+.gradient-0 {
+  background-image: linear-gradient(to bottom, #b6b1ac 0%, #202e3a 100%);
+}
+.gradient-1 {
+  background-image: linear-gradient(to top, #b6b1ac 0%, #202e3a 100%);
+}
+.gradient-icon {
+  background-image: linear-gradient(to bottom, #b6b1ac 0%, #202e3a 100%);
+}
+.gradient-footer {
+  background-color: #202e3a;
+}
+.wave-svg-header-bottom {
+  margin-bottom: -1px;
+}
+.wave-svg-header-top {
+  margin-top: -2px;
+}
+.page-header {
+  margin-top: 56px;
+  font-size: 1.25rem;
+}
+
+.products {
+  .headphones-products {
+    width: 60%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.features {
+  ul {
+    padding-left: 1rem;
+    list-style-type: none;
+    li {
+      padding-left: 2rem;
+      background-image: url(../assets/check-list-icon.svg);
+      background-repeat: no-repeat;
+      line-height: 1.5rem;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.users {
+  .icon {
+    width: 5rem;
+    height: 5rem;
+    font-size: 1.75rem;
+    border-radius: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  h3,
+  p {
+    color: #000;
+  }
+}
+
+.gallery {
+  img {
+    border-radius: 5%;
+  }
+}
+
+.contact {
+  color: black;
+  .submit-btn {
+    border: none;
+  }
+}
+
+footer {
+  font-size: 1rem;
+  margin: 0;
+}
