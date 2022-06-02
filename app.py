@@ -14,5 +14,10 @@ def about_us():
     return render_template('about_us.html')
 
 
+@app.route("/find")
+def find():
+    return render_template('find.html')
+
+
 if __name__ == "__main__":
     app.run(debug=True)
