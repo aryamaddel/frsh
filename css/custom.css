@@ -8,17 +8,14 @@ body {
 }
 
 .gradient-0 {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#b6b1ac), to(#202e3a));
   background-image: linear-gradient(to bottom, #b6b1ac 0%, #202e3a 100%);
 }
 
 .gradient-1 {
-  background-image: -webkit-gradient(linear, left bottom, left top, from(#b6b1ac), to(#202e3a));
   background-image: linear-gradient(to top, #b6b1ac 0%, #202e3a 100%);
 }
 
 .gradient-icon {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#b6b1ac), to(#202e3a));
   background-image: linear-gradient(to bottom, #b6b1ac 0%, #202e3a 100%);
 }
 
@@ -50,7 +47,6 @@ body {
   padding-left: 1rem;
   list-style-type: none;
 }
-
 .features ul li {
   padding-left: 2rem;
   background-image: url(../assets/check-list-icon.svg);
@@ -64,17 +60,10 @@ body {
   height: 5rem;
   font-size: 1.75rem;
   border-radius: 100%;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
-
 .users h3,
 .users p {
   color: #000;
@@ -87,7 +76,6 @@ body {
 .contact {
   color: black;
 }
-
 .contact .submit-btn {
   border: none;
 }
@@ -95,5 +83,4 @@ body {
 footer {
   font-size: 1rem;
   margin: 0;
-}
-/*# sourceMappingURL=custom.css.map */
+}/*# sourceMappingURL=custom.css.map */
