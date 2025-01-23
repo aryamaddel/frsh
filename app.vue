@@ -2,7 +2,7 @@
   <div id="app" class="min-h-screen bg-gray-50 text-gray-800">
     <header class="bg-white shadow">
       <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-        <h1 class="text-2xl font-bold text-green-500">frsh</h1>
+        <NuxtLink to="/" class="text-2xl font-bold text-green-500">frsh</NuxtLink>
         <nav>
           <ul class="flex space-x-4">
             <li>
