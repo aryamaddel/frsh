@@ -6,6 +6,6 @@ const { data: blogPost } = await useAsyncData(route.path, () => {
 </script>
 
 <template>
-  <ContentRenderer v-if="blogPost" :value="blogPost" />
+  <ContentRenderer v-if="blogPost" :value="blogPost" class="prose" />
   <div v-else>Post not found</div>
 </template>
