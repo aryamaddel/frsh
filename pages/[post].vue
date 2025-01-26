@@ -6,6 +6,7 @@ const { data: blogPost } = await useAsyncData(route.path, () => {
 </script>
 
 <template>
+  <NuxtLink to="/blog">Back to blog List</NuxtLink>
   <ContentRenderer v-if="blogPost" :value="blogPost" class="prose" />
   <div v-else>Post not found</div>
 </template>
