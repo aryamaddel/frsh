@@ -1,7 +1,5 @@
 <script setup lang="ts">
-const { data: navigationData } = await useAsyncData('navigation', () => {
-    return queryCollectionNavigation('content')
-})
+const { data: navigationData } = await useAsyncData(() => { return queryCollectionNavigation('content') })
 
 </script>
 
@@ -16,6 +14,5 @@ const { data: navigationData } = await useAsyncData('navigation', () => {
             </ul>
             <p v-else>No blog posts available.</p>
         </nav>
-
     </div>
 </template>
