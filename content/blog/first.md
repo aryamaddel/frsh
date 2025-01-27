@@ -1,6 +1,9 @@
 ---
 title: First
 description: My first blog post
+tags: dummy, blog, first
+author: GitHub Copilot
+date: 2023-10-05
 ---
 
 # First
