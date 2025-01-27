@@ -1,18 +1,14 @@
 <script setup lang="ts">
-const { data: navigationData } = await useAsyncData(() => { return queryCollectionNavigation('content') })
-
+const { data: posts } = await useAsyncData('blog', () => queryCollection('blog').all())
 </script>
 
 <template>
     <div class="container mx-auto px-4 py-8">
         <h1 class="text-4xl font-bold text-center mb-8">Blog Posts</h1>
-        <nav>
-            <ul v-if="navigationData">
-                <li v-for="item in navigationData[0].children" :key="item.path">
-                    <NuxtLink :to="item.path">{{ item.title }}</NuxtLink>
-                </li>
-            </ul>
-            <p v-else>No blog posts available.</p>
-        </nav>
+      <ul>
+        <li v-for="post in posts" :key="post.id">
+          <NuxtLink :to="post.path">{{ post.title }}</NuxtLink>
+        </li>
+      </ul>
     </div>
 </template>
