@@ -9,7 +9,7 @@ const { data: navigationData } = await useAsyncData(() => { return queryCollecti
         <nav>
             <ul v-if="navigationData">
                 <li v-for="item in navigationData[0].children" :key="item.path">
-                    <NuxtLink :to="item.path.replace('/blog', '')">{{ item.title }}</NuxtLink>
+                    <NuxtLink :to="item.path">{{ item.title }}</NuxtLink>
                 </li>
             </ul>
             <p v-else>No blog posts available.</p>
