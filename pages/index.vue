@@ -1,7 +1,4 @@
 <script setup lang="ts">
-definePageMeta({
-  prefetch: true
-})
 
 const { data: latestPosts } = await useAsyncData('latest-posts', () =>
   queryCollection('blog')
