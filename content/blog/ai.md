@@ -1,7 +1,7 @@
 ---
 title: The Future of Artificial Intelligence
 description: An overview of the current state, future potential, and ethical considerations of AI.
-tags: artificial-intelligence, technology, ethics
+tags: [artificial-intelligence, technology, ethics]
 author: Your Name
 date: 2025-01-05
 ---
