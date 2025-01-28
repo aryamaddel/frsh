@@ -1,15 +1,14 @@
 <script setup lang="ts">
-// Fetch latest posts
+definePageMeta({
+  prefetch: true
+})
+
 const { data: latestPosts } = await useAsyncData('latest-posts', () =>
   queryCollection('blog')
     .order('date', 'DESC')
     .select('id', 'title', 'description', 'path', 'date', 'author', 'tags')
     .limit(2)
     .all(),
-  {
-    immediate: true,
-    server: true
-  }
 )
 </script>
 
