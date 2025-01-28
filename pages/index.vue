@@ -5,7 +5,11 @@ const { data: latestPosts } = await useAsyncData('latest-posts', () =>
     .order('date', 'DESC')
     .select('id', 'title', 'description', 'path', 'date', 'author', 'tags')
     .limit(2)
-    .all()
+    .all(),
+  {
+    immediate: true,
+    server: true
+  }
 )
 </script>
 
