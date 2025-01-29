@@ -1,22 +1,23 @@
 <script setup lang="ts">
-
 useHead({
-  title: 'frsh',
+  title: "frsh",
   meta: [
     {
-      name: 'description',
-      content: 'Sharing my journey through technology, projects I\'ve built over the years, and anything tech-related.'
-    }
+      name: "description",
+      content:
+        "Sharing my journey through technology, projects I've built over the years, and anything tech-related.",
+    },
   ],
-
-})
+});
 
 useSeoMeta({
-  title: 'frsh',
-  ogTitle: 'tech blog',
-  description: 'Sharing my journey through technology, projects I\'ve built over the years, and anything tech-related.',
-  ogDescription: 'Sharing my journey through technology, projects I\'ve built over the years, and anything tech-related.',
-})
+  title: "frsh",
+  ogTitle: "tech blog",
+  description:
+    "Sharing my journey through technology, projects I've built over the years, and anything tech-related.",
+  ogDescription:
+    "Sharing my journey through technology, projects I've built over the years, and anything tech-related.",
+});
 </script>
 
 <template>

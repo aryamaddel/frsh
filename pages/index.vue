@@ -1,12 +1,11 @@
 <script setup lang="ts">
-
-const { data: latestPosts } = await useAsyncData('latest-posts', () =>
-  queryCollection('blog')
-    .order('date', 'DESC')
-    .select('id', 'title', 'description', 'path', 'date', 'author', 'tags')
+const { data: latestPosts } = await useAsyncData("latest-posts", () =>
+  queryCollection("blog")
+    .order("date", "DESC")
+    .select("id", "title", "description", "path", "date", "author", "tags")
     .limit(2)
-    .all(),
-)
+    .all()
+);
 </script>
 
 <template>
@@ -15,7 +14,8 @@ const { data: latestPosts } = await useAsyncData('latest-posts', () =>
     <section class="text-center mb-16">
       <h1 class="text-5xl font-bold mb-6 text-gray-800">Welcome to frsh</h1>
       <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-        Sharing my journey through technology, projects I've built over the years, and anything tech-related.
+        Sharing my journey through technology, projects I've built over the
+        years, and anything tech-related.
       </p>
     </section>
 
@@ -41,7 +41,9 @@ const { data: latestPosts } = await useAsyncData('latest-posts', () =>
                   {{ tag }}
                 </li>
               </ul>
-              <h3 class="text-2xl font-semibold text-gray-800 mb-3">{{ post.title }}</h3>
+              <h3 class="text-2xl font-semibold text-gray-800 mb-3">
+                {{ post.title }}
+              </h3>
               <p class="text-gray-600 line-clamp-2">{{ post.description }}</p>
             </div>
 
