@@ -1,7 +1,13 @@
 <script setup lang="ts">
 const route = useRoute()
-const { data: post } = await useAsyncData(route.path, () => queryCollection('blog').path(route.path).first())
-const { data: surroundData } = await useAsyncData('surround', () => queryCollectionItemSurroundings('blog', route.path))
+
+const { data: post } = await useAsyncData(
+  `post-${route.path}`, () => queryCollection('blog').path(route.path).first()
+)
+
+const { data: surroundData } = await useAsyncData(
+  `surround-${route.path}`, () => queryCollectionItemSurroundings('blog', route.path)
+)
 </script>
 
 <template>
