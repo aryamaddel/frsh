@@ -35,12 +35,7 @@ const { data: latestPosts } = await useAsyncData("latest-posts", () =>
           class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md hover:border-green-200 transition-all duration-200">
           <NuxtLink :to="post.path" class="block p-6">
             <div class="mb-4">
-              <ul class="flex flex-wrap gap-2 mb-3">
-                <li v-for="tag in post.tags" :key="tag"
-                  class="px-3 py-1 bg-green-50 text-green-600 rounded-full text-sm font-medium">
-                  {{ tag }}
-                </li>
-              </ul>
+             
               <h3 class="text-2xl font-semibold text-gray-800 mb-3">
                 {{ post.title }}
               </h3>
