@@ -2,7 +2,7 @@
 const { data: latestPosts } = await useAsyncData("latest-posts", () =>
   queryCollection("blog")
     .order("date", "DESC")
-    .select("id", "title", "description", "path", "date", "author", "tags")
+    .select("id", "title", "description", "path", "date", "author")
     .limit(2)
     .all()
 );
@@ -10,7 +10,6 @@ const { data: latestPosts } = await useAsyncData("latest-posts", () =>
 
 <template>
   <main class="container mx-auto px-4 py-12 max-w-5xl">
-    <!-- Hero Section -->
     <section class="text-center mb-16">
       <h1 class="text-5xl font-bold mb-6 text-gray-800">Welcome to frsh</h1>
       <p class="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -19,7 +18,6 @@ const { data: latestPosts } = await useAsyncData("latest-posts", () =>
       </p>
     </section>
 
-    <!-- Latest Posts Section -->
     <section>
       <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-8 space-y-4 md:space-y-0">
         <h2 class="text-3xl font-bold text-gray-800">Latest Posts</h2>
@@ -35,7 +33,6 @@ const { data: latestPosts } = await useAsyncData("latest-posts", () =>
           class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md hover:border-green-200 transition-all duration-200">
           <NuxtLink :to="post.path" class="block p-6">
             <div class="mb-4">
-             
               <h3 class="text-2xl font-semibold text-gray-800 mb-3">
                 {{ post.title }}
               </h3>

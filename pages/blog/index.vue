@@ -1,17 +1,16 @@
 <script setup lang="ts">
 const searchQuery = ref("");
 const selectedAuthor = ref("");
-const selectedTag = ref("");
 
 const { data: allPostsForMeta } = await useAsyncData("blog-meta", () =>
-  queryCollection("blog").select("author", "tags").all()
+  queryCollection("blog").all()
 );
 
-const { data: filteredPosts, refresh } = useAsyncData(
+const { data: filteredPosts } = await useAsyncData(
   `blog-posts-${searchQuery.value}-${selectedAuthor.value}`,
   () => {
     const query = queryCollection("blog")
-      .select("id", "title", "description", "path", "date", "author", "tags")
+      .select('id', "author", "date", "title", "description", "path")
       .order("date", "DESC");
 
     if (searchQuery.value) {
@@ -22,25 +21,12 @@ const { data: filteredPosts, refresh } = useAsyncData(
     }
 
     return query.all();
-  }
+  },
+  { watch: [searchQuery, selectedAuthor] }
 );
-
-watch([searchQuery, selectedAuthor], () => {
-  refresh();
-});
-
-const finalPosts = computed(() => {
-  if (!filteredPosts.value) return [];
-  return filteredPosts.value.filter(
-    (post) => !selectedTag.value || post.tags.includes(selectedTag.value)
-  );
-});
 
 const authors = computed(() => [
   ...new Set(allPostsForMeta.value?.map((post) => post.author) || []),
-]);
-const tags = computed(() => [
-  ...new Set(allPostsForMeta.value?.flatMap((post) => post.tags) || []),
 ]);
 </script>
 
@@ -62,17 +48,11 @@ const tags = computed(() => [
             {{ author }}
           </option>
         </select>
-
-        <select v-model="selectedTag"
-          class="w-1/2 p-3 border border-gray-200 rounded-lg shadow-sm focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition-colors duration-200">
-          <option value="">All Tags</option>
-          <option v-for="tag in tags" :key="tag" :value="tag">{{ tag }}</option>
-        </select>
       </div>
     </div>
 
     <ul class="space-y-6">
-      <li v-for="post in finalPosts" :key="post.id">
+      <li v-for="post in filteredPosts" :key="post.id">
         <NuxtLink :to="post.path"
           class="block p-6 bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md hover:border-green-200 transition-all duration-200">
           <h2 class="text-2xl font-semibold mb-3 text-gray-800 group-hover:text-green-600">
@@ -91,13 +71,6 @@ const tags = computed(() => [
               {{ post.author }}
             </span>
           </div>
-
-          <ul class="flex flex-wrap gap-2 mt-4">
-            <li v-for="tag in post.tags" :key="tag"
-              class="px-3 py-1 bg-green-50 text-green-600 rounded-full text-sm font-medium hover:bg-green-100 transition-colors duration-200">
-              {{ tag }}
-            </li>
-          </ul>
         </NuxtLink>
       </li>
     </ul>
