@@ -21,7 +21,7 @@ const { data: latestPosts } = await useAsyncData("latest-posts", () =>
 
     <!-- Latest Posts Section -->
     <section>
-      <div class="flex items-center justify-between mb-8">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-8 space-y-4 md:space-y-0">
         <h2 class="text-3xl font-bold text-gray-800">Latest Posts</h2>
         <NuxtLink to="/blog"
           class="inline-flex items-center px-4 py-2 rounded-lg bg-green-50 text-green-600 hover:bg-green-100 transition-colors duration-200">
