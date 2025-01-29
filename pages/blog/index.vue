@@ -39,16 +39,22 @@ const authors = computed(() => [
 
       <div class="mb-8 flex flex-col sm:flex-row gap-4">
         <div class="relative flex-1">
-          <input type="search" v-model="searchQuery" placeholder="Search posts..."
-            class="w-full p-3 pl-10 bg-white border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-200" />
+          <input
+            type="search"
+            v-model="searchQuery"
+            placeholder="Search posts..."
+            class="w-full p-3 pl-10 bg-white border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition-all duration-200"
+          />
           <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
             🔍
           </span>
         </div>
 
         <div class="w-full sm:w-64">
-          <select v-model="selectedAuthor"
-            class="w-full p-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-200 appearance-none">
+          <select
+            v-model="selectedAuthor"
+            class="w-full p-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition-all duration-200 appearance-none"
+          >
             <option value="">All Authors</option>
             <option v-for="author in authors" :key="author" :value="author">
               {{ author }}
@@ -65,16 +71,22 @@ const authors = computed(() => [
 
       <ul v-else class="grid gap-6">
         <li v-for="post in filteredPosts" :key="post.id" class="group">
-          <NuxtLink :to="post.path"
-            class="block p-6 bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-lg hover:border-blue-200 transition-all duration-200">
-            <h2 class="text-2xl font-semibold mb-3 text-gray-900 group-hover:text-blue-600 transition-colors">
+          <NuxtLink
+            :to="post.path"
+            class="block p-6 bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-lg hover:border-green-200 transition-all duration-200"
+          >
+            <h2
+              class="text-2xl font-semibold mb-3 text-gray-900 group-hover:text-green-600 transition-colors"
+            >
               {{ post.title }}
             </h2>
             <p class="text-gray-600 mb-4 line-clamp-2">
               {{ post.description }}
             </p>
 
-            <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500">
+            <div
+              class="flex flex-wrap items-center gap-4 text-sm text-gray-500"
+            >
               <span class="flex items-center">
                 <span class="mr-2">📅</span>
                 {{ new Date(post.date).toLocaleDateString() }}
