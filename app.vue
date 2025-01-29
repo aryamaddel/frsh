@@ -1,3 +1,24 @@
+<script setup lang="ts">
+
+useHead({
+  title: 'frsh',
+  meta: [
+    {
+      name: 'description',
+      content: 'Sharing my journey through technology, projects I\'ve built over the years, and anything tech-related.'
+    }
+  ],
+
+})
+
+useSeoMeta({
+  title: 'frsh',
+  ogTitle: 'tech blog',
+  description: 'Sharing my journey through technology, projects I\'ve built over the years, and anything tech-related.',
+  ogDescription: 'Sharing my journey through technology, projects I\'ve built over the years, and anything tech-related.',
+})
+</script>
+
 <template>
   <div id="app" class="min-h-screen flex flex-col bg-gradient-to-br from-gray-50 to-gray-100 text-gray-800 antialiased">
     <header class="bg-white shadow-md sticky top-0 z-50 backdrop-blur-sm bg-white/90">
