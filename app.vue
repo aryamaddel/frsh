@@ -32,17 +32,18 @@ useSeoMeta({
           <nav class="relative">
             <ul class="flex items-center space-x-2 sm:space-x-6 font-medium">
               <li>
-                <NuxtLink to="/"
-                  class="px-3 py-2 rounded-lg hover:bg-green-50 hover:text-green-600 transition-all duration-200 active:scale-95">
-                  Home
-                </NuxtLink>
-              </li>
-              <li>
                 <NuxtLink to="/blog"
                   class="px-3 py-2 rounded-lg hover:bg-green-50 hover:text-green-600 transition-all duration-200 active:scale-95">
                   Blog
                 </NuxtLink>
               </li>
+              <li>
+                <NuxtLink to="https://github.com/aryamaddel/frsh"
+                  class="px-3 py-2 rounded-lg hover:bg-green-50 hover:text-green-600 transition-all duration-200 active:scale-95">
+                  Github
+                </NuxtLink>
+              </li>
+
               <li>
                 <NuxtLink to="/about"
                   class="px-3 py-2 rounded-lg hover:bg-green-50 hover:text-green-600 transition-all duration-200 active:scale-95">
