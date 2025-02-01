@@ -9,7 +9,9 @@
     </section>
 
     <div class="grid md:grid-cols-3 gap-8">
-      <article class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md hover:border-green-200 transition-all duration-200">
+      <article
+        class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md hover:border-green-200 transition-all duration-200"
+      >
         <div class="p-6">
           <div class="aspect-square mb-4 overflow-hidden rounded-lg">
             <nuxt-img
@@ -45,7 +47,9 @@
         </div>
       </article>
 
-      <article class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md hover:border-green-200 transition-all duration-200">
+      <article
+        class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md hover:border-green-200 transition-all duration-200"
+      >
         <div class="p-6">
           <div class="aspect-square mb-4 overflow-hidden rounded-lg">
             <nuxt-img
@@ -58,7 +62,7 @@
             Anish Maisekar
           </h3>
           <p class="text-gray-600 mb-4">
-            Computer Science Student specializing in software development
+            Computer Science Student from Pune, India
           </p>
           <div class="flex flex-wrap gap-2">
             <NuxtLink
@@ -83,7 +87,9 @@
         </div>
       </article>
 
-      <article class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md hover:border-green-200 transition-all duration-200">
+      <article
+        class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md hover:border-green-200 transition-all duration-200"
+      >
         <div class="p-6">
           <div class="aspect-square mb-4 overflow-hidden rounded-lg">
             <nuxt-img
@@ -95,9 +101,7 @@
           <h3 class="text-2xl font-semibold text-gray-800 mb-3">
             Ruchir Kalohke
           </h3>
-          <p class="text-gray-600 mb-4">
-            Computer Science Student focusing on software engineering
-          </p>
+          <p class="text-gray-600 mb-4">AIDS Student from Pune, India</p>
           <div class="flex flex-wrap gap-2">
             <NuxtLink
               to="https://ruchirkalokhe.github.io/"
@@ -121,7 +125,9 @@
         </div>
       </article>
 
-      <article class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md hover:border-green-200 transition-all duration-200 md:col-start-2">
+      <article
+        class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md hover:border-green-200 transition-all duration-200 md:col-start-2"
+      >
         <div class="p-6">
           <div class="aspect-square mb-4 overflow-hidden rounded-lg">
             <nuxt-img
@@ -133,9 +139,7 @@
           <h3 class="text-2xl font-semibold text-gray-800 mb-3">
             Nimish Shinde
           </h3>
-          <p class="text-gray-600 mb-4">
-            Computer Science Student focusing on software engineering
-          </p>
+          <p class="text-gray-600 mb-4">AIDS Student from IIT Madras</p>
           <div class="flex flex-wrap gap-2">
             <NuxtLink
               to="https://ruchirkalokhe.github.io/"
