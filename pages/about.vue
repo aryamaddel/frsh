@@ -1,7 +1,7 @@
 <template>
   <main class="container mx-auto px-4 py-12 max-w-5xl">
     <section class="text-center mb-16">
-      <h1 class="text-5xl font-bold mb-6 text-gray-800">Meet Our Team</h1>
+      <h1 class="text-5xl font-bold mb-6 text-gray-800">We Post</h1>
       <p class="text-xl text-gray-600 max-w-2xl mx-auto">
         A group of passionate Computer Science students from Pune, India,
         working on innovative solutions.
