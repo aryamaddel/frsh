@@ -2,7 +2,7 @@
 title: "DeepSeek-R1 vs O3-Mini: A Comprehensive Comparison"
 description: "A detailed comparison between DeepSeek-R1 and O3-Mini language models, analyzing their performance benchmarks, architectural differences, and key features. While DeepSeek-R1 excels in coding and mathematical tasks with its 671B parameters, O3-Mini offers better safety features and larger context windows."
 author: "Nimish Shinde"
-date: 2024-01-31
+date: 2025-02-31
 ---
 
 This comparison highlights the key differences between o3-mini and DeepSeek-R1 in terms of performance benchmarks and model features.DeepSeek-R1 shows  better performance in some coding and math tasks
