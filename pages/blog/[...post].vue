@@ -1,10 +1,8 @@
 <script setup lang="ts">
 const route = useRoute();
-
 const { data: post } = await useAsyncData(`post-${route.path}`, () =>
   queryCollection("blog").path(route.path).first()
 );
-
 const { data: surroundData } = await useAsyncData(
   `surround-${route.path}`,
   () => queryCollectionItemSurroundings("blog", route.path)
@@ -12,23 +10,31 @@ const { data: surroundData } = await useAsyncData(
 </script>
 
 <template>
-  <div class="space-y-8">
+  <div class="max-w-3xl mx-auto space-y-8">
     <NuxtLink
       to="/blog"
       class="inline-flex items-center text-green-500 hover:text-green-600 font-medium transition-colors duration-200"
     >
-      <span class="mr-2">←</span> Back to Blog List
+      <span class="mr-2">←</span>
+      Back to Blog List
     </NuxtLink>
-
+    <div class="text-gray-500 text-sm space-x-2">
+      <span>{{ post?.author }}</span>
+      <span>•</span>
+      <span>{{
+        new Date(
+          post?.date || "Publication Date not known"
+        ).toLocaleDateString()
+      }}</span>
+    </div>
     <article class="bg-white rounded-2xl shadow-sm p-6 sm:p-8">
       <ContentRenderer
         v-if="post"
         :value="post"
-        class="prose prose-green max-w-none prose-img:rounded-xl prose-headings:text-gray-800"
+        class="prose prose-green max-w-none prose-img:rounded-xl prose-headings:text-gray-800 [&_a]:break-words [&_a]:overflow-wrap-anywhere [&_pre]:overflow-x-auto [&_pre]:whitespace-pre-wrap [&_code]:break-words"
       />
       <div v-else class="text-gray-500 text-center py-12">Post not found</div>
     </article>
-
     <nav
       class="flex justify-between items-center pt-8 border-t border-gray-200"
     >
@@ -41,7 +47,6 @@ const { data: surroundData } = await useAsyncData(
         {{ surroundData[0].title }}
       </NuxtLink>
       <div v-else class="flex-1"></div>
-
       <NuxtLink
         v-if="surroundData?.[1]"
         :to="surroundData[1].path"
