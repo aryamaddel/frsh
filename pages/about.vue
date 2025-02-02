@@ -104,7 +104,7 @@
           <p class="text-gray-600 mb-4">AIDS Student from Pune, India</p>
           <div class="flex flex-wrap gap-2">
             <NuxtLink
-              to="https://ruchirkalokhe.github.io/"
+              to="https://ruchirkalokhe.github.io/portfolio"
               target="_blank"
               rel="noopener noreferrer"
               class="inline-flex items-center px-4 py-2 rounded-lg bg-green-50 text-green-600 hover:bg-green-100 transition-colors duration-200"
