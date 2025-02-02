@@ -18,9 +18,9 @@ This project uses an ESP32 with the Espalexa library to turn a PC on and off via
 
 ## Circuit Diagram
 
-![Circuit Diagram](/blog/ESP32%20Alexa%20PC%20Power%20Control/esp%20pc%20control%20circuit.jpg)  
+![Circuit Diagram](/blog/ESP32-Alexa-PC-Power-Control/esp-pc-control-circuit.png)  
 _(Ignore the rookie circuit diagram 😅😅)_
 
 ## Model Representation
 
-![Model Representation](/blog/ESP32%20Alexa%20PC%20Power%20Control/esp%20pc%20control%20model.jpg)
+![Model Representation](/blog/ESP32-Alexa-PC-Power-Control/esp-pc-control-model.png)
