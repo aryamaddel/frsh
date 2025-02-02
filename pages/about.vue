@@ -151,7 +151,7 @@
               <span class="ml-2">→</span>
             </NuxtLink>
             <NuxtLink
-              to="https://github.com/TheGamingSaga"
+              to="https://github.com/whynimoisalive"
               target="_blank"
               rel="noopener noreferrer"
               class="inline-flex items-center px-4 py-2 rounded-lg bg-gray-50 text-gray-600 hover:bg-gray-100 transition-colors duration-200"
