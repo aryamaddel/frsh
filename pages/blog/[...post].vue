@@ -31,7 +31,7 @@ const { data: surroundData } = await useAsyncData(
       <ContentRenderer
         v-if="post"
         :value="post"
-        class="prose prose-green max-w-none prose-img:rounded-xl prose-headings:text-gray-800 [&_a]:break-words [&_a]:overflow-wrap-anywhere [&_pre]:overflow-x-auto [&_pre]:whitespace-pre-wrap [&_code]:break-words"
+        class="prose prose-green max-w-none prose-img:rounded-xl prose-headings:text-gray-800 prose-pre:bg-gray-100 prose-pre:text-gray-800 prose-pre:p-4 prose-pre:rounded-lg prose-code:bg-gray-100 prose-code:text-gray-800 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-pre:prose-code:bg-transparent prose-pre:prose-code:p-0"
       />
       <div v-else class="text-gray-500 text-center py-12">Post not found</div>
     </article>
