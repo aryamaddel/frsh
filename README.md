@@ -1,6 +1,6 @@
 # My Personal Blog (Nuxt Content Starter)
 
-This is my personal blog built with Nuxt.js. While it’s currently empty, it's set up as a great starting point for any content-driven site using **Nuxt Content**.
+This is my personal blog built with Nuxt.js. Its set up as a great starting point for any content-driven site using **Nuxt Content**.
 
 ## Features
 
