@@ -1,3 +1,9 @@
+---
+title: Quantum Key Distribution (QKD) Simulator
+description: An interactive simulator for the BB84 protocol, a foundational approach to establish secure cryptographic keys between two parties without relying on traditional computational hardness assumptions.
+author: Ruchir Kalokhe
+date: 2025-04-01
+---
 # Dive into Quantum Cryptography: My Interactive BB84 QKD Simulator
 
 The quantum realm isn't just theoretical physics anymore. With recent announcements like Google's Willow and Microsoft's Majorana 1 quantum chips, the race towards powerful quantum computers is accelerating. While exciting, this also presents a significant challenge: today's standard encryption methods could become vulnerable.
