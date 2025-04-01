@@ -16,7 +16,7 @@ Today, I'm excited to share it with you!
 
 **Link to the Simulator:** [**https://qkd-sim.streamlit.app/**](https://qkd-sim.streamlit.app/)
 
-[![QKD Simulation](/content/images/qkd-screenshot.png)](https://qkd-sim.streamlit.app/) <!-- Make sure this path is correct for your blog -->
+[![QKD Simulation](/blog/qkd-sim/qkd-screenshot.png)](https://qkd-sim.streamlit.app/) <!-- Make sure this path is correct for your blog -->
 
 ---
 
