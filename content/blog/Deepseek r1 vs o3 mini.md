@@ -5,45 +5,42 @@ author: "Nimish Shinde"
 date: 2025-02-31
 ---
 
-This comparison highlights the key differences between o3-mini and DeepSeek-R1 in terms of performance benchmarks and model features.DeepSeek-R1 shows  better performance in some coding and math tasks
+This comparison highlights the key differences between o3-mini and DeepSeek-R1 in terms of performance benchmarks and model features.DeepSeek-R1 shows better performance in some coding and math tasks
+
 ## Benchmark Comparison
 
-| **Benchmark** | **o3-mini** | **DeepSeek-R1** |
-|---------------|-------------|-----------------|
-| **Codeforces (Competitive Programming Platform)** | 1997 | 2029 |
-| **AIME 2024 (American Invitational Mathematics Examination)** | 78.2% | 79.8% |
-| **GPQA (General-Purpose Question Answering)** | 74.9% | 71.5% |
-| **MMLU (Massive Multitask Language Understanding)** | Not available | 90.8% |
-| **MMLU-Pro (Massive Multitask Language Understanding - Pro Version)** | Not available | 84% |
-| **IFEval (Instruction-Following Evaluation)** | Not available | 83.3% |
+| **Benchmark**                                                         | **o3-mini**   | **DeepSeek-R1** |
+| --------------------------------------------------------------------- | ------------- | --------------- |
+| **Codeforces (Competitive Programming Platform)**                     | 1997          | 2029            |
+| **AIME 2024 (American Invitational Mathematics Examination)**         | 78.2%         | 79.8%           |
+| **GPQA (General-Purpose Question Answering)**                         | 74.9%         | 71.5%           |
+| **MMLU (Massive Multitask Language Understanding)**                   | Not available | 90.8%           |
+| **MMLU-Pro (Massive Multitask Language Understanding - Pro Version)** | Not available | 84%             |
+| **IFEval (Instruction-Following Evaluation)**                         | Not available | 83.3%           |
 
 ## Key Features Comparison
 
-
-| Feature | o3-mini | DeepSeek-R1 |
-|---------|---------|-------------|
-| Architecture | Not specified | Mixture of Experts (MoE) |
-| Total Parameters | Not specified | 671 billion |
-| Active Parameters | Not specified | 37 billion per forward pass |
-| Training Approach | Reinforcement learning, Deliberative alignment | Multi-stage training with RL and SFT |
-| Reasoning Levels | Low, medium, high | Not specified |
-| Chain of Thought | Yes | Yes |
-| Input Context Window | 200K tokens | 128K tokens |
-| Maximum Output | 100K tokens | 32K tokens |
-| Function Calling | Yes | Not specified |
-| Structured Outputs | Yes | Not specified |
-| Developer Messages | Supported | Not specified |
-| Safety Approach | Deliberative alignment | Not specified |
-| Open Source | No | Yes |
-| Customization | Not specified | Supports fine-tuning |
-| Deployment Options | ChatGPT, API | API, mobile app, cloud services |
-| Unsafe Response Rate | 1.19% | 11.98% |
-| Release Date | January 31, 2025.| January 21, 2025 |
+| Feature              | o3-mini                                        | DeepSeek-R1                          |
+| -------------------- | ---------------------------------------------- | ------------------------------------ |
+| Architecture         | Not specified                                  | Mixture of Experts (MoE)             |
+| Total Parameters     | Not specified                                  | 671 billion                          |
+| Active Parameters    | Not specified                                  | 37 billion per forward pass          |
+| Training Approach    | Reinforcement learning, Deliberative alignment | Multi-stage training with RL and SFT |
+| Reasoning Levels     | Low, medium, high                              | Not specified                        |
+| Chain of Thought     | Yes                                            | Yes                                  |
+| Input Context Window | 200K tokens                                    | 128K tokens                          |
+| Maximum Output       | 100K tokens                                    | 32K tokens                           |
+| Function Calling     | Yes                                            | Not specified                        |
+| Structured Outputs   | Yes                                            | Not specified                        |
+| Developer Messages   | Supported                                      | Not specified                        |
+| Safety Approach      | Deliberative alignment                         | Not specified                        |
+| Open Source          | No                                             | Yes                                  |
+| Customization        | Not specified                                  | Supports fine-tuning                 |
+| Deployment Options   | ChatGPT, API                                   | API, mobile app, cloud services      |
+| Unsafe Response Rate | 1.19%                                          | 11.98%                               |
+| Release Date         | January 31, 2025.                              | January 21, 2025                     |
 
 This expanded comparison highlights the different approaches and features of o3-mini and DeepSeek-R1, showcasing their unique architectures, training methodologies, and capabilities.
-
-
-
 
 Citations:
 [1] https://builtin.com/artificial-intelligence/deepseek-r1
