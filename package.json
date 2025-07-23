@@ -13,10 +13,10 @@
   "dependencies": {
     "@nuxt/content": "3.5.1",
     "@nuxt/image": "1.10.0",
-    "@nuxt/kit": "3.17.2",
+    "@nuxt/kit": "4.0.1",
     "@nuxtjs/tailwindcss": "6.14.0",
     "@tailwindcss/typography": "0.5.16",
-    "nuxt": "3.17.2",
+    "nuxt": "4.0.1",
     "vue": "latest",
     "vue-router": "latest"
   }
