@@ -16,7 +16,7 @@
       <TeamMember
         name="Arya Maddel"
         image="team/Arya.jpg"
-        link="https://aryamaddel.github.io/"
+        link="https://aryamaddel.dev/"
       />
       <TeamMember
         name="Ruchir Kalohke"
