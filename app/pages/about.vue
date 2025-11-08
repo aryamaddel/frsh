@@ -22,6 +22,7 @@
                 image="team/Arya.jpg"
                 link="https://aryamaddel.dev/"
             />
+            
             <TeamMember
                 name="Ruchir Kalohke"
                 image="team/Ruchir.jpg"
