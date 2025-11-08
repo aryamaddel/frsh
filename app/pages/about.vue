@@ -25,7 +25,7 @@
             <TeamMember
                 name="Ruchir Kalohke"
                 image="team/Ruchir.jpg"
-                link="https://x.com/ruchirkalohke"
+                link="https://x.com/ruchirkalokhe"
             />
         </div>
     </main>
