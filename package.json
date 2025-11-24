@@ -10,12 +10,12 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@nuxt/content": "3.7.1",
-    "@nuxt/image": "1.11.0",
+    "@nuxt/content": "3.8.2",
+    "@nuxt/image": "2.0.0",
     "@nuxt/kit": "^4.2.1",
     "@nuxtjs/tailwindcss": "6.14.0",
     "@tailwindcss/typography": "0.5.19",
-    "better-sqlite3": "^12.4.1",
+    "better-sqlite3": "^12.4.6",
     "nuxt": "^4.2.1",
     "vue": "latest",
     "vue-router": "latest"
