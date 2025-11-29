@@ -65,15 +65,6 @@ onMounted(() => {
                   Github
                 </NuxtLink>
               </li>
-
-              <li>
-                <NuxtLink
-                  to="/about"
-                  class="px-3 py-2 rounded-lg hover:bg-green-50 hover:text-green-600 dark:hover:bg-green-900/30 dark:hover:text-green-400 transition-all duration-200 active:scale-95"
-                >
-                  About
-                </NuxtLink>
-              </li>
             </ul>
           </nav>
         </div>
