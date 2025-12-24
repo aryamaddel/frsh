@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const isDark = ref(false);
+
 useHead({
   title: "frsh",
   meta: [
@@ -20,14 +22,37 @@ useSeoMeta({
 });
 
 onMounted(() => {
-  const currentHour = new Date().getHours();
+  // Check system/device theme preference
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  isDark.value = prefersDark;
 
-  if (!(currentHour >= 8 && currentHour < 18)) {
+  if (prefersDark) {
     document.documentElement.classList.add("dark");
   } else {
     document.documentElement.classList.remove("dark");
   }
+
+  // Listen for system theme changes
+  window
+    .matchMedia("(prefers-color-scheme: dark)")
+    .addEventListener("change", (e) => {
+      isDark.value = e.matches;
+      if (e.matches) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    });
 });
+
+const toggleTheme = () => {
+  isDark.value = !isDark.value;
+  if (isDark.value) {
+    document.documentElement.classList.add("dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+  }
+};
 </script>
 
 <template>
@@ -70,6 +95,37 @@ onMounted(() => {
         </div>
       </div>
     </header>
+
+    <!-- Theme Toggle - Corner Sun/Moon -->
+    <button
+      @click="toggleTheme"
+      class="fixed top-0 right-0 z-[60] w-16 h-16 cursor-pointer"
+      aria-label="Toggle theme"
+    >
+      <!-- Sun (quarter circle in corner) - Light mode -->
+      <svg
+        v-if="!isDark"
+        class="absolute top-0 right-0 w-16 h-16 text-amber-400 hover:text-amber-500 transition-colors"
+        viewBox="0 0 100 100"
+      >
+        <path
+          d="M0 0 L100 0 L100 100 A100 100 0 0 0 0 0 Z"
+          fill="currentColor"
+        />
+      </svg>
+
+      <!-- Moon (quarter circle in corner) - Dark mode -->
+      <svg
+        v-else
+        class="absolute top-0 right-0 w-16 h-16 text-indigo-400 hover:text-indigo-300 transition-colors"
+        viewBox="0 0 100 100"
+      >
+        <path
+          d="M0 0 L100 0 L100 100 A100 100 0 0 0 0 0 Z"
+          fill="currentColor"
+        />
+      </svg>
+    </button>
 
     <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow">
       <NuxtPage />
