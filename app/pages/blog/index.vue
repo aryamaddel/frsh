@@ -31,7 +31,7 @@ const authors = computed(() => [
 </script>
 
 <template>
-  <div class="min-h-screen bg-gray-50 dark:bg-gray-900">
+  <div class="">
     <div class="container mx-auto px-4 py-12 max-w-5xl">
       <h1 class="text-4xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100">
         Blog Posts
