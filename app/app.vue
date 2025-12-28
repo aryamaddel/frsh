@@ -49,7 +49,7 @@ const toggleTheme = () => {
         <div class="flex justify-around items-center">
           <NuxtLink
             to="/"
-            class="glass-reflection text-2xl sm:text-3xl font-extrabold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 transition-all duration-300 tracking-tight"
+            class="text-2xl sm:text-3xl font-extrabold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 transition-all duration-300 tracking-tight"
           >
             frsh
           </NuxtLink>
