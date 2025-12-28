@@ -11,10 +11,10 @@ const { data: latestPosts } = await useAsyncData("latest-posts", () =>
 <template>
   <main class="container mx-auto px-4 py-12 max-w-5xl">
     <section class="text-center mb-16">
-      <h1 class="text-5xl font-bold mb-6 text-gray-800 dark:text-gray-100">
+      <h1 class="text-5xl font-bold mb-6 text-white drop-shadow-lg">
         Welcome to frsh
       </h1>
-      <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+      <p class="text-xl text-gray-200 max-w-2xl mx-auto drop-shadow-md">
         Sharing my journey through technology, projects I've built over the
         years, and anything tech-related.
       </p>
@@ -24,12 +24,12 @@ const { data: latestPosts } = await useAsyncData("latest-posts", () =>
       <div
         class="flex flex-col md:flex-row items-start md:items-center justify-between mb-8 space-y-4 md:space-y-0"
       >
-        <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-100">
+        <h2 class="text-3xl font-bold text-white drop-shadow-lg">
           Latest Posts
         </h2>
         <NuxtLink
           to="/blog"
-          class="inline-flex items-center px-4 py-2 border border-emerald-500/50 bg-emerald-500/5 text-emerald-600 hover:border-emerald-500 hover:bg-emerald-500/10 dark:text-emerald-400 dark:hover:bg-emerald-500/20 transition-all duration-300 transform hover:-translate-y-0.5"
+          class="inline-flex items-center px-4 py-2 border border-emerald-400/60 bg-emerald-500/20 text-emerald-300 hover:border-emerald-400 hover:bg-emerald-500/30 hover:text-emerald-200 transition-all duration-300 transform hover:-translate-y-0.5 backdrop-blur-sm"
         >
           View All Posts
           <span

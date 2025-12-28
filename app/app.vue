@@ -29,7 +29,14 @@ const toggleTheme = () => {
 <template>
   <div
     id="app"
-    class="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-950 text-gray-800 dark:text-gray-200 antialiased transition-all duration-500"
+    class="min-h-screen flex flex-col text-gray-800 dark:text-gray-200 antialiased transition-all duration-500 relative"
+    style="
+      background-image: url(&quot;/background.gif&quot;);
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+    "
   >
     <header
       class="bg-white/80 dark:bg-gray-900/80 border-b border-gray-300 dark:border-gray-700 sticky top-0 z-50 backdrop-blur-md transition-all duration-500"
@@ -82,7 +89,7 @@ const toggleTheme = () => {
     >
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div class="flex flex-col items-center justify-center space-y-4">
-          <p class="text-sm text-gray-600 dark:text-gray-400">
+          <p class="text-sm text-gray-200">
             &copy; 2025 frsh. All rights reserved.
           </p>
         </div>
