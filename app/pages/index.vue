@@ -29,10 +29,13 @@ const { data: latestPosts } = await useAsyncData("latest-posts", () =>
         </h2>
         <NuxtLink
           to="/blog"
-          class="inline-flex items-center px-4 py-2 rounded-lg bg-green-50 text-green-600 hover:bg-green-100 dark:bg-green-900/30 dark:text-green-400 dark:hover:bg-green-800/50 transition-colors duration-200"
+          class="inline-flex items-center px-4 py-2 border border-emerald-500/50 bg-emerald-500/5 text-emerald-600 hover:border-emerald-500 hover:bg-emerald-500/10 dark:text-emerald-400 dark:hover:bg-emerald-500/20 transition-all duration-300 transform hover:-translate-y-0.5"
         >
           View All Posts
-          <span class="ml-2">→</span>
+          <span
+            class="ml-2 transition-transform duration-300 group-hover:translate-x-1"
+            >→</span
+          >
         </NuxtLink>
       </div>
 
@@ -40,7 +43,7 @@ const { data: latestPosts } = await useAsyncData("latest-posts", () =>
         <article
           v-for="post in latestPosts"
           :key="post.id"
-          class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm hover:shadow-md hover:border-green-200 dark:hover:border-green-700 transition-all duration-200"
+          class="bg-white/60 dark:bg-gray-900/60 border border-gray-300 dark:border-gray-700 backdrop-blur-sm hover:border-emerald-500 dark:hover:border-emerald-500 hover:bg-white/80 dark:hover:bg-gray-900/80 transition-all duration-300 transform hover:-translate-y-1"
         >
           <NuxtLink :to="post.path" class="block p-6">
             <div class="mb-4">

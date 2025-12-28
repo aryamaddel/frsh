@@ -33,7 +33,9 @@ const authors = computed(() => [
 <template>
   <div class="">
     <div class="container mx-auto px-4 py-12 max-w-5xl">
-      <h1 class="text-4xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100">
+      <h1
+        class="text-4xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100"
+      >
         Blog Posts
       </h1>
 
@@ -43,9 +45,11 @@ const authors = computed(() => [
             type="search"
             v-model="searchQuery"
             placeholder="Search posts..."
-            class="w-full p-3 pl-10 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg shadow-sm focus:ring-2 focus:ring-green-500 focus:border-green-500 dark:focus:ring-green-600 dark:focus:border-green-600 outline-none transition-all duration-200 dark:text-gray-100 dark:placeholder-gray-400"
+            class="w-full p-3 pl-10 bg-white/60 dark:bg-gray-900/60 border border-gray-300 dark:border-gray-700 backdrop-blur-sm focus:border-emerald-500 dark:focus:border-emerald-500 focus:bg-white/80 dark:focus:bg-gray-900/80 outline-none transition-all duration-300 dark:text-gray-100 dark:placeholder-gray-500"
           />
-          <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500">
+          <span
+            class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500 transition-all duration-300"
+          >
             🔍
           </span>
         </div>
@@ -53,7 +57,7 @@ const authors = computed(() => [
         <div class="w-full sm:w-64">
           <select
             v-model="selectedAuthor"
-            class="w-full p-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg shadow-sm focus:ring-2 focus:ring-green-500 focus:border-green-500 dark:focus:ring-green-600 dark:focus:border-green-600 outline-none transition-all duration-200 appearance-none dark:text-gray-100"
+            class="w-full p-3 bg-white/60 dark:bg-gray-900/60 border border-gray-300 dark:border-gray-700 backdrop-blur-sm focus:border-emerald-500 dark:focus:border-emerald-500 focus:bg-white/80 dark:focus:bg-gray-900/80 outline-none transition-all duration-300 appearance-none dark:text-gray-100 cursor-pointer"
           >
             <option value="">All Authors</option>
             <option v-for="author in authors" :key="author" :value="author">
@@ -73,10 +77,10 @@ const authors = computed(() => [
         <li v-for="post in filteredPosts" :key="post.id" class="group">
           <NuxtLink
             :to="post.path"
-            class="block p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm hover:shadow-lg hover:border-green-200 dark:hover:border-green-700 transition-all duration-200"
+            class="block p-6 bg-white/60 dark:bg-gray-900/60 border border-gray-300 dark:border-gray-700 backdrop-blur-sm hover:border-emerald-500 dark:hover:border-emerald-500 hover:bg-white/80 dark:hover:bg-gray-900/80 transition-all duration-300 transform hover:-translate-y-1"
           >
             <h2
-              class="text-2xl font-semibold mb-3 text-gray-900 dark:text-gray-100 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors"
+              class="text-2xl font-semibold mb-3 text-gray-900 dark:text-gray-100 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-all duration-300"
             >
               {{ post.title }}
             </h2>

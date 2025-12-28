@@ -58,26 +58,26 @@ const toggleTheme = () => {
 <template>
   <div
     id="app"
-    class="min-h-screen flex flex-col bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 text-gray-800 dark:text-gray-200 antialiased transition-colors duration-300"
+    class="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-950 text-gray-800 dark:text-gray-200 antialiased transition-all duration-500"
   >
     <header
-      class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50 backdrop-blur-sm bg-white/90 dark:bg-gray-800/90 transition-colors duration-300"
+      class="bg-white/80 dark:bg-gray-900/80 border-b border-gray-300 dark:border-gray-700 sticky top-0 z-50 backdrop-blur-md transition-all duration-500"
     >
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <div class="flex justify-between items-center">
+        <div class="flex justify-around items-center">
           <NuxtLink
             to="/"
-            class="text-2xl sm:text-3xl font-extrabold text-green-500 hover:text-green-600 dark:text-green-400 dark:hover:text-green-300 transition-colors duration-200 tracking-tight"
+            class="text-2xl sm:text-3xl font-extrabold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 transition-all duration-300 tracking-tight transform hover:scale-105"
           >
             frsh
           </NuxtLink>
 
-          <nav class="relative">
+          <nav>
             <ul class="flex items-center space-x-2 sm:space-x-6 font-medium">
               <li>
                 <NuxtLink
                   to="/blog"
-                  class="px-3 py-2 rounded-lg hover:bg-green-50 hover:text-green-600 dark:hover:bg-green-900/30 dark:hover:text-green-400 transition-all duration-200 active:scale-95"
+                  class="px-3 py-2 border border-transparent hover:border-emerald-500/50 hover:bg-emerald-500/5 hover:text-emerald-600 dark:hover:text-emerald-400 transition-all duration-300 transform hover:-translate-y-0.5"
                 >
                   Blog
                 </NuxtLink>
@@ -85,7 +85,7 @@ const toggleTheme = () => {
               <li>
                 <NuxtLink
                   to="https://github.com/aryamaddel/frsh"
-                  class="px-3 py-2 rounded-lg hover:bg-green-50 hover:text-green-600 dark:hover:bg-green-900/30 dark:hover:text-green-400 transition-all duration-200 active:scale-95"
+                  class="px-3 py-2 border border-transparent hover:border-emerald-500/50 hover:bg-emerald-500/5 hover:text-emerald-600 dark:hover:text-emerald-400 transition-all duration-300 transform hover:-translate-y-0.5"
                 >
                   Github
                 </NuxtLink>
@@ -105,7 +105,7 @@ const toggleTheme = () => {
     <NuxtRouteAnnouncer />
 
     <footer
-      class="bg-white dark:bg-gray-800 shadow-inner mt-16 transition-colors duration-300"
+      class="bg-white/80 dark:bg-gray-900/80 border-t border-gray-300 dark:border-gray-700 mt-16 backdrop-blur-md transition-all duration-500"
     >
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div class="flex flex-col items-center justify-center space-y-4">
