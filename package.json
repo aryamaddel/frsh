@@ -10,7 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@nuxt/content": "3.9.0",
+    "@nuxt/content": "3.10.0",
     "@nuxt/image": "2.0.0",
     "@nuxt/kit": "^4.2.2",
     "@nuxtjs/color-mode": "^4.0.0",
