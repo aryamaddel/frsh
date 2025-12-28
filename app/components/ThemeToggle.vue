@@ -11,13 +11,14 @@ defineEmits<{
 <template>
   <button
     @click="$emit('toggle')"
+    title="make it change colors"
     class="fixed top-0 right-0 z-[60] cursor-pointer group transition-transform duration-300 hover:scale-110"
     aria-label="Toggle theme"
   >
     <!-- Light mode - Sun staircase -->
     <svg
       v-if="!isDark"
-      class="w-16 h-16 text-amber-500 group-hover:text-amber-600 transition-all duration-500"
+      class="w-12 h-12 text-amber-500 group-hover:text-amber-600 transition-all duration-500"
       viewBox="0 0 100 100"
     >
       <!-- Staircase steps - 8 steps for finer detail -->
@@ -90,7 +91,7 @@ defineEmits<{
     <!-- Dark mode - Moon staircase -->
     <svg
       v-else
-      class="w-16 h-16 text-indigo-400 group-hover:text-indigo-300 transition-all duration-500"
+      class="w-12 h-12 text-indigo-400 group-hover:text-indigo-300 transition-all duration-500"
       viewBox="0 0 100 100"
     >
       <!-- Staircase steps - 8 steps for finer detail -->

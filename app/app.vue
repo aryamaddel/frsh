@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const isDark = ref(false);
+const colorMode = useColorMode();
 
 useHead({
   title: "frsh",
@@ -21,37 +21,8 @@ useSeoMeta({
     "Sharing my journey through technology, projects I've built over the years, and anything tech-related.",
 });
 
-onMounted(() => {
-  // Check system/device theme preference
-  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  isDark.value = prefersDark;
-
-  if (prefersDark) {
-    document.documentElement.classList.add("dark");
-  } else {
-    document.documentElement.classList.remove("dark");
-  }
-
-  // Listen for system theme changes
-  window
-    .matchMedia("(prefers-color-scheme: dark)")
-    .addEventListener("change", (e) => {
-      isDark.value = e.matches;
-      if (e.matches) {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-      }
-    });
-});
-
 const toggleTheme = () => {
-  isDark.value = !isDark.value;
-  if (isDark.value) {
-    document.documentElement.classList.add("dark");
-  } else {
-    document.documentElement.classList.remove("dark");
-  }
+  colorMode.preference = colorMode.preference === "dark" ? "light" : "dark";
 };
 </script>
 
@@ -96,7 +67,9 @@ const toggleTheme = () => {
       </div>
     </header>
 
-    <ThemeToggle :isDark="isDark" @toggle="toggleTheme" />
+    <ColorScheme>
+      <ThemeToggle :isDark="colorMode.value === 'dark'" @toggle="toggleTheme" />
+    </ColorScheme>
 
     <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow">
       <NuxtPage />
