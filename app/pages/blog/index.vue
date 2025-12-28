@@ -77,7 +77,7 @@ const authors = computed(() => [
         <li v-for="post in filteredPosts" :key="post.id" class="group">
           <NuxtLink
             :to="post.path"
-            class="block p-6 bg-white/60 dark:bg-gray-900/60 border border-gray-300 dark:border-gray-700 backdrop-blur-sm hover:border-emerald-500 dark:hover:border-emerald-500 hover:bg-white/80 dark:hover:bg-gray-900/80 transition-all duration-300 transform hover:-translate-y-1"
+            class="glass-reflection block p-6 bg-white/60 dark:bg-gray-900/60 border border-gray-300 dark:border-gray-700 backdrop-blur-sm hover:border-emerald-500 dark:hover:border-emerald-500 hover:bg-white/80 dark:hover:bg-gray-900/80 transition-all duration-300"
           >
             <h2
               class="text-2xl font-semibold mb-3 text-gray-900 dark:text-gray-100 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-all duration-300"

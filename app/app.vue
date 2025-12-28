@@ -26,6 +26,10 @@ const toggleTheme = () => {
 };
 </script>
 
+<style>
+@import "@/assets/css/glass-reflection.css";
+</style>
+
 <template>
   <div
     id="app"
@@ -45,7 +49,7 @@ const toggleTheme = () => {
         <div class="flex justify-around items-center">
           <NuxtLink
             to="/"
-            class="text-2xl sm:text-3xl font-extrabold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 transition-all duration-300 tracking-tight transform hover:scale-105"
+            class="glass-reflection text-2xl sm:text-3xl font-extrabold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 transition-all duration-300 tracking-tight"
           >
             frsh
           </NuxtLink>
@@ -55,7 +59,7 @@ const toggleTheme = () => {
               <li>
                 <NuxtLink
                   to="/blog"
-                  class="px-3 py-2 border border-transparent hover:border-emerald-500/50 hover:bg-emerald-500/5 hover:text-emerald-600 dark:hover:text-emerald-400 transition-all duration-300 transform hover:-translate-y-0.5"
+                  class="glass-reflection px-3 py-2 border border-transparent hover:border-emerald-500/50 hover:bg-emerald-500/5 hover:text-emerald-600 dark:hover:text-emerald-400 transition-all duration-300"
                 >
                   Blog
                 </NuxtLink>
@@ -63,7 +67,7 @@ const toggleTheme = () => {
               <li>
                 <NuxtLink
                   to="https://github.com/aryamaddel/frsh"
-                  class="px-3 py-2 border border-transparent hover:border-emerald-500/50 hover:bg-emerald-500/5 hover:text-emerald-600 dark:hover:text-emerald-400 transition-all duration-300 transform hover:-translate-y-0.5"
+                  class="glass-reflection px-3 py-2 border border-transparent hover:border-emerald-500/50 hover:bg-emerald-500/5 hover:text-emerald-600 dark:hover:text-emerald-400 transition-all duration-300"
                 >
                   Github
                 </NuxtLink>

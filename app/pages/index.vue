@@ -29,7 +29,7 @@ const { data: latestPosts } = await useAsyncData("latest-posts", () =>
         </h2>
         <NuxtLink
           to="/blog"
-          class="inline-flex items-center px-4 py-2 border border-emerald-400/60 bg-emerald-500/20 text-emerald-300 hover:border-emerald-400 hover:bg-emerald-500/30 hover:text-emerald-200 transition-all duration-300 transform hover:-translate-y-0.5 backdrop-blur-sm"
+          class="glass-reflection inline-flex items-center px-4 py-2 border border-emerald-400/60 bg-emerald-500/20 text-emerald-300 hover:border-emerald-400 hover:bg-emerald-500/30 hover:text-emerald-200 transition-all duration-300 backdrop-blur-sm"
         >
           View All Posts
           <span
@@ -43,7 +43,7 @@ const { data: latestPosts } = await useAsyncData("latest-posts", () =>
         <article
           v-for="post in latestPosts"
           :key="post.id"
-          class="bg-white/60 dark:bg-gray-900/60 border border-gray-300 dark:border-gray-700 backdrop-blur-sm hover:border-emerald-500 dark:hover:border-emerald-500 hover:bg-white/80 dark:hover:bg-gray-900/80 transition-all duration-300 transform hover:-translate-y-1"
+          class="glass-reflection bg-white/60 dark:bg-gray-900/60 border border-gray-300 dark:border-gray-700 backdrop-blur-sm hover:border-emerald-500 dark:hover:border-emerald-500 hover:bg-white/80 dark:hover:bg-gray-900/80 transition-all duration-300"
         >
           <NuxtLink :to="post.path" class="block p-6">
             <div class="mb-4">
