@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { ref, onMounted, onUnmounted } from "vue";
+
 defineProps<{
   isDark: boolean;
 }>();
@@ -6,6 +8,35 @@ defineProps<{
 defineEmits<{
   toggle: [];
 }>();
+
+const blinking = ref(false);
+let timer: number | null = null;
+
+function scheduleBlink() {
+  const delay = 2500 + Math.random() * 5500; // 2.5s – 8s
+  timer = window.setTimeout(() => {
+    blinkOnce();
+
+    // 30% chance of double blink
+    if (Math.random() < 0.3) {
+      setTimeout(blinkOnce, 180);
+    }
+
+    scheduleBlink();
+  }, delay);
+}
+
+function blinkOnce() {
+  blinking.value = true;
+  setTimeout(() => {
+    blinking.value = false;
+  }, 120);
+}
+
+onMounted(scheduleBlink);
+onUnmounted(() => {
+  if (timer) clearTimeout(timer);
+});
 </script>
 
 <template>
@@ -38,7 +69,8 @@ defineEmits<{
         width="4"
         height="4"
         fill="#3a2a00"
-        class="origin-center group-hover:scale-y-50 transition-transform duration-300"
+        :class="blinking ? 'scale-y-0' : 'scale-y-100'"
+        class="origin-center transition-transform duration-150"
       />
       <rect
         x="74"
@@ -46,7 +78,8 @@ defineEmits<{
         width="4"
         height="4"
         fill="#3a2a00"
-        class="origin-center group-hover:scale-y-50 transition-transform duration-300"
+        :class="blinking ? 'scale-y-0' : 'scale-y-100'"
+        class="origin-center transition-transform duration-150"
       />
 
       <!-- nose -->
@@ -110,7 +143,8 @@ defineEmits<{
         width="4"
         height="4"
         fill="#a5f3fc"
-        class="origin-center group-hover:scale-y-50 transition-transform duration-300"
+        :class="blinking ? 'scale-y-0' : 'scale-y-100'"
+        class="origin-center transition-transform duration-150"
       />
       <rect
         x="74"
@@ -118,7 +152,8 @@ defineEmits<{
         width="4"
         height="4"
         fill="#a5f3fc"
-        class="origin-center group-hover:scale-y-50 transition-transform duration-300"
+        :class="blinking ? 'scale-y-0' : 'scale-y-100'"
+        class="origin-center transition-transform duration-150"
       />
 
       <!-- nose -->
