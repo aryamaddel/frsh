@@ -1,33 +1,10 @@
 <script setup lang="ts">
-const searchQuery = ref("");
-const selectedAuthor = ref("");
-
-const { data: allPostsForMeta } = await useAsyncData("blog-meta", () =>
-  queryCollection("blog").all()
+const { data: posts } = await useAsyncData("blog-posts", () =>
+  queryCollection("blog")
+    .select("id", "author", "date", "title", "description", "path")
+    .order("date", "DESC")
+    .all()
 );
-
-const { data: filteredPosts } = await useAsyncData(
-  `blog-posts-${searchQuery.value}-${selectedAuthor.value}`,
-  () => {
-    const query = queryCollection("blog")
-      .select("id", "author", "date", "title", "description", "path")
-      .order("date", "DESC");
-
-    if (searchQuery.value) {
-      query.where("title", "LIKE", `%${searchQuery.value}%`);
-    }
-    if (selectedAuthor.value) {
-      query.where("author", "=", selectedAuthor.value);
-    }
-
-    return query.all();
-  },
-  { watch: [searchQuery, selectedAuthor] }
-);
-
-const authors = computed(() => [
-  ...new Set(allPostsForMeta.value?.map((post) => post.author) || []),
-]);
 </script>
 
 <template>
@@ -39,42 +16,12 @@ const authors = computed(() => [
         Blog Posts
       </h1>
 
-      <div class="mb-8 flex flex-col sm:flex-row gap-4">
-        <div class="relative flex-1">
-          <input
-            type="search"
-            v-model="searchQuery"
-            placeholder="Search posts..."
-            class="w-full p-3 pl-10 bg-white/60 dark:bg-gray-900/60 border border-gray-300 dark:border-gray-700 backdrop-blur-sm focus:border-emerald-500 dark:focus:border-emerald-500 focus:bg-white/80 dark:focus:bg-gray-900/80 outline-none transition-all duration-300 dark:text-gray-100 dark:placeholder-gray-500"
-          />
-          <span
-            class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500 transition-all duration-300"
-          >
-            🔍
-          </span>
-        </div>
-
-        <div class="w-full sm:w-64">
-          <select
-            v-model="selectedAuthor"
-            class="w-full p-3 bg-white/60 dark:bg-gray-900/60 border border-gray-300 dark:border-gray-700 backdrop-blur-sm focus:border-emerald-500 dark:focus:border-emerald-500 focus:bg-white/80 dark:focus:bg-gray-900/80 outline-none transition-all duration-300 appearance-none dark:text-gray-100 cursor-pointer"
-          >
-            <option value="">All Authors</option>
-            <option v-for="author in authors" :key="author" :value="author">
-              {{ author }}
-            </option>
-          </select>
-        </div>
-      </div>
-
-      <div v-if="filteredPosts?.length === 0" class="text-center py-12">
-        <p class="text-gray-600 dark:text-gray-400 text-lg">
-          No posts found matching your criteria
-        </p>
+      <div v-if="posts?.length === 0" class="text-center py-12">
+        <p class="text-gray-600 dark:text-gray-400 text-lg">No posts found</p>
       </div>
 
       <ul v-else class="grid gap-6">
-        <li v-for="post in filteredPosts" :key="post.id" class="group">
+        <li v-for="post in posts" :key="post.id" class="group">
           <NuxtLink
             :to="post.path"
             class="glass-reflection block p-6 bg-white/60 dark:bg-gray-900/60 border border-gray-300 dark:border-gray-700 backdrop-blur-sm hover:border-emerald-500 dark:hover:border-emerald-500 hover:bg-white/80 dark:hover:bg-gray-900/80 transition-all duration-300"
