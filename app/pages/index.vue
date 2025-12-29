@@ -10,11 +10,11 @@ const { data: latestPosts } = await useAsyncData("latest-posts", () =>
 
 <template>
   <main class="container mx-auto px-4 py-12 max-w-5xl">
-    <section class="text-center mb-16">
+    <section class="mb-16">
       <h1 class="text-5xl font-bold mb-6 text-white drop-shadow-lg">
         Welcome to frsh
       </h1>
-      <p class="text-xl text-gray-200 max-w-2xl mx-auto drop-shadow-md">
+      <p class="text-xl text-gray-200 max-w-xl drop-shadow-md">
         Sharing my journey through technology, projects I've built over the
         years, and anything tech-related.
       </p>
