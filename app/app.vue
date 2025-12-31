@@ -45,8 +45,8 @@ const toggleTheme = () => {
     <header
       class="bg-white/80 dark:bg-gray-900/80 border-b border-gray-300 dark:border-gray-700 sticky top-0 z-50 backdrop-blur-md transition-all duration-500"
     >
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <div class="flex justify-around items-center">
+      <div class="container mx-auto px-4 py-4 max-w-5xl">
+        <div class="flex justify-between items-center">
           <NuxtLink
             to="/"
             class="text-2xl sm:text-3xl font-extrabold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 transition-all duration-300 tracking-tight"
