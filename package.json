@@ -10,15 +10,15 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@nuxt/content": "3.10.0",
+    "@nuxt/content": "3.11.0",
     "@nuxt/image": "2.0.0",
-    "@nuxt/kit": "^4.2.2",
+    "@nuxt/kit": "^4.3.0",
     "@nuxtjs/color-mode": "^4.0.0",
     "@nuxtjs/tailwindcss": "6.14.0",
     "@tailwindcss/typography": "0.5.19",
-    "better-sqlite3": "^12.5.0",
-    "nuxt": "^4.2.2",
-    "vue": "latest",
-    "vue-router": "latest"
+    "better-sqlite3": "^12.6.2",
+    "nuxt": "^4.3.0",
+    "vue": "3.5.27",
+    "vue-router": "5.0.2"
   }
 }
