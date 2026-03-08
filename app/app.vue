@@ -94,7 +94,8 @@ const toggleTheme = () => {
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div class="flex flex-col items-center justify-center space-y-4">
           <p class="text-sm text-gray-600 dark:text-gray-200">
-            &copy; Made with <span class="text-emerald-600 dark:text-emerald-400">Nuxt</span>
+            Made with
+            <span class="text-emerald-600 dark:text-emerald-400">Nuxt</span> 💚
           </p>
         </div>
       </div>
