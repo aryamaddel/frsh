@@ -1,5 +1,4 @@
 <script setup lang="ts">
-const colorMode = useColorMode();
 
 useHead({
   title: "frsh",
@@ -21,9 +20,6 @@ useSeoMeta({
     "Sharing my journey through technology, projects I've built over the years, and anything tech-related.",
 });
 
-const toggleTheme = () => {
-  colorMode.preference = colorMode.preference === "dark" ? "light" : "dark";
-};
 </script>
 
 <style>
@@ -33,7 +29,7 @@ const toggleTheme = () => {
 <template>
   <div
     id="app"
-    class="min-h-screen flex flex-col text-gray-800 dark:text-gray-200 antialiased transition-all duration-500 relative"
+    class="min-h-screen flex flex-col text-gray-200 antialiased transition-all duration-500 relative"
     style="
       background-image: url(&quot;/background.gif&quot;);
       background-size: cover;
@@ -43,13 +39,13 @@ const toggleTheme = () => {
     "
   >
     <header
-      class="bg-white/80 dark:bg-gray-900/80 border-b border-gray-300 dark:border-gray-700 sticky top-0 z-50 backdrop-blur-md transition-all duration-500"
+      class="bg-gray-900/80 border-b border-gray-700 sticky top-0 z-50 backdrop-blur-md transition-all duration-500"
     >
       <div class="container mx-auto px-4 py-4 max-w-5xl">
         <div class="flex justify-between items-center">
           <NuxtLink
             to="/"
-            class="text-2xl sm:text-3xl font-extrabold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 transition-all duration-300 tracking-tight"
+            class="text-2xl sm:text-3xl font-extrabold text-emerald-400 hover:text-emerald-300 transition-all duration-300 tracking-tight"
           >
             frsh
           </NuxtLink>
@@ -59,7 +55,7 @@ const toggleTheme = () => {
               <li>
                 <NuxtLink
                   to="/blog"
-                  class="glass-reflection px-3 py-2 border border-transparent hover:border-emerald-500/50 hover:bg-emerald-500/5 hover:text-emerald-600 dark:hover:text-emerald-400 transition-all duration-300"
+                  class="glass-reflection px-3 py-2 border border-transparent hover:border-emerald-500/50 hover:bg-emerald-500/5 hover:text-emerald-400 transition-all duration-300"
                 >
                   Blog
                 </NuxtLink>
@@ -67,7 +63,7 @@ const toggleTheme = () => {
               <li>
                 <NuxtLink
                   to="https://github.com/aryamaddel/frsh"
-                  class="glass-reflection px-3 py-2 border border-transparent hover:border-emerald-500/50 hover:bg-emerald-500/5 hover:text-emerald-600 dark:hover:text-emerald-400 transition-all duration-300"
+                  class="glass-reflection px-3 py-2 border border-transparent hover:border-emerald-500/50 hover:bg-emerald-500/5 hover:text-emerald-400 transition-all duration-300"
                 >
                   Github
                 </NuxtLink>
@@ -78,9 +74,6 @@ const toggleTheme = () => {
       </div>
     </header>
 
-    <ColorScheme>
-      <ThemeToggle :isDark="colorMode.value === 'dark'" @toggle="toggleTheme" />
-    </ColorScheme>
 
     <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow">
       <NuxtPage />
@@ -89,13 +82,13 @@ const toggleTheme = () => {
     <NuxtRouteAnnouncer />
 
     <footer
-      class="bg-white/80 dark:bg-gray-900/80 border-t border-gray-300 dark:border-gray-700 mt-16 backdrop-blur-md transition-all duration-500"
+      class="bg-gray-900/80 border-t border-gray-700 mt-16 backdrop-blur-md transition-all duration-500"
     >
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div class="flex flex-col items-center justify-center space-y-4">
-          <p class="text-sm text-gray-600 dark:text-gray-200">
+          <p class="text-sm text-gray-200">
             Made with
-            <span class="text-emerald-600 dark:text-emerald-400">Nuxt</span> 💚
+            <span class="text-emerald-400">Nuxt</span> 💚
           </p>
         </div>
       </div>

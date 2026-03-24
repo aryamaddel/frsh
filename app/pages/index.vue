@@ -43,22 +43,22 @@ const { data: latestPosts } = await useAsyncData("latest-posts", () =>
         <article
           v-for="post in latestPosts"
           :key="post.id"
-          class="glass-reflection bg-white/60 dark:bg-gray-900/60 border border-gray-300 dark:border-gray-700 backdrop-blur-sm hover:border-emerald-500 dark:hover:border-emerald-500 hover:bg-white/80 dark:hover:bg-gray-900/80 transition-all duration-300"
+          class="glass-reflection bg-gray-900/60 border border-gray-700 backdrop-blur-sm hover:border-emerald-500 hover:bg-gray-900/80 transition-all duration-300"
         >
           <NuxtLink :to="post.path" class="block p-6">
             <div class="mb-4">
               <h3
-                class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-3"
+                class="text-2xl font-semibold text-gray-200 mb-3"
               >
                 {{ post.title }}
               </h3>
-              <p class="text-gray-600 dark:text-gray-300 line-clamp-2">
+              <p class="text-gray-300 line-clamp-2">
                 {{ post.description }}
               </p>
             </div>
 
             <div
-              class="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400"
+              class="flex items-center justify-between text-sm text-gray-400"
             >
               <span class="flex items-center">
                 {{ post.author }}
