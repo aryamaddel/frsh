@@ -4,7 +4,6 @@ export default defineNuxtConfig({
     "@nuxtjs/tailwindcss",
     "@nuxt/image",
     "@nuxt/content",
-    "@nuxtjs/color-mode",
   ],
   compatibilityDate: "2025-04-01",
 });
