@@ -2,7 +2,6 @@ use std::fs;
 use std::path::{Path, PathBuf};
 use gpui::Context;
 
-
 pub struct Vault {
     root_path: PathBuf,
     files: Vec<PathBuf>,
@@ -10,19 +9,15 @@ pub struct Vault {
 
 impl Vault {
     pub fn new(root_path: PathBuf, _cx: &mut Context<Self>) -> Self {
-        // Create the folder if it doesn't exist
         if !root_path.exists() {
             let _ = fs::create_dir_all(&root_path);
         }
-        
-        let mut vault = Self {
-            root_path,
-            files: Vec::new(),
-        };
+        let mut vault = Self { root_path, files: Vec::new() };
         vault.rescan();
         vault
     }
 
+    #[allow(dead_code)]
     pub fn root_path(&self) -> &Path {
         &self.root_path
     }
@@ -45,7 +40,6 @@ impl Vault {
                 }
             }
         }
-        // Sort alphabetically
         new_files.sort();
         self.files = new_files;
     }
@@ -68,5 +62,19 @@ impl Vault {
         fs::write(&path, "")?;
         self.rescan();
         Ok(path)
+    }
+
+    pub fn delete_file(&mut self, path: &Path) -> Result<(), std::io::Error> {
+        fs::remove_file(path)?;
+        self.rescan();
+        Ok(())
+    }
+
+    #[allow(dead_code)]
+    pub fn rename_file(&mut self, old: &Path, new_name: &str) -> Result<PathBuf, std::io::Error> {
+        let new_path = self.root_path.join(new_name);
+        fs::rename(old, &new_path)?;
+        self.rescan();
+        Ok(new_path)
     }
 }

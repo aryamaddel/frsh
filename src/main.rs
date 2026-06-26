@@ -1,36 +1,43 @@
 #![cfg_attr(target_family = "wasm", no_main)]
 
-mod vault;
+mod actions;
 mod editor;
 mod file_tree;
+mod titlebar;
+mod vault;
 mod workspace;
 
 use std::path::PathBuf;
-use gpui::{
-    App, WindowBounds, WindowOptions, prelude::*, px, size, Bounds,
-};
+
+use gpui::{App, Bounds, prelude::*, px, size};
+use crate::titlebar::TitleBar;
 use crate::vault::Vault;
 use crate::workspace::Workspace;
+use crate::actions::register_keybindings;
 
 fn run_app() {
     gpui_platform::application().run(|cx: &mut App| {
-        // We will default to a folder called "vault" in the current working directory
+        // Register all keybindings (editor, workspace, file tree)
+        register_keybindings(cx);
+
+        // Register application menus (native menu bar on macOS,
+        // custom-rendered in title bar on Windows/Linux)
+        titlebar::register(cx);
+
+        // Vault folder: "vault/" next to the working directory
         let current_dir = std::env::current_dir().unwrap_or_else(|_| PathBuf::from("."));
         let vault_path = current_dir.join("vault");
-        
-        // Setup window options
-        let bounds = Bounds::centered(None, size(px(1024.0), px(768.0)), cx);
-        let options = WindowOptions {
-            window_bounds: Some(WindowBounds::Windowed(bounds)),
-            ..Default::default()
-        };
 
-        cx.open_window(options, |_, cx| {
-            // Initialize the Vault model
-            let vault = cx.new(|cx| Vault::new(vault_path, cx));
-            
-            // Initialize the Workspace view with the vault
-            cx.new(|cx| Workspace::new_with_callback(vault, cx))
+        let bounds = Bounds::centered(None, size(px(1200.0), px(800.0)), cx);
+        let options = titlebar::window_options(bounds);
+
+        cx.open_window(options, |_window, cx| {
+            cx.new(|cx| {
+                let vault = cx.new(|cx| Vault::new(vault_path, cx));
+                let mut workspace = Workspace::new_with_callback(vault, cx);
+                workspace.title_bar = Some(cx.new(|cx| TitleBar::new(cx)));
+                workspace
+            })
         })
         .unwrap();
 
